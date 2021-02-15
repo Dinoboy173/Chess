@@ -205,9 +205,17 @@ namespace ChessGame
 
             if (GetSide() == EChessSide.WHITE)
             {
-                if (targetCol == GetCol())
+                if (targetCol == GetCol() + 1 && targetRow == GetRow() + 1 || targetCol == GetCol() - 1 && targetRow == GetRow() - 1)
                 {
-                    if (GetRow() + 1 == targetRow)
+                    if (GetRow() + 1 >= targetRow && GetRow() + 1 >= targetRow)
+                        return true;
+                }
+            }
+            if (GetSide() == EChessSide.WHITE)
+            {
+                if (targetCol == GetCol() + 1 && targetRow == GetRow() - 1 || targetCol == GetCol() - 1 && targetRow == GetRow() + 1)
+                {
+                    if (GetRow() - 1 <= targetRow && GetRow() + 1 >= targetRow)
                         return true;
                 }
             }
